@@ -19,13 +19,15 @@ public class Principal {
         meuCarro.fabricante = "BMW";
         meuCarro.modelo = "X1";
         meuCarro.cor = "Cinza";
-        meuCarro.anoFabricacao = 2024;
+        meuCarro.anoFabricacao = 2015;
+        meuCarro.precoCompra = 120000;
         meuCarro.propietario = propietario1;
-        System.out.printf("Fabricante: %s%n", meuCarro.fabricante);
+        meuCarro.calcularValorRevenda();
+        /*System.out.printf("Fabricante: %s%n", meuCarro.fabricante);
         System.out.printf("Modelo: %s%n", meuCarro.modelo);
         System.out.printf("Cor: %s%n", meuCarro.cor);
         System.out.printf("Ano: %d%n", meuCarro.anoFabricacao);
-        System.out.printf("Propietário: %s%n", meuCarro.propietario.nome);
+        System.out.printf("Propietário: %s%n", meuCarro.propietario.nome);*/
 
         System.out.println();
 
@@ -33,13 +35,18 @@ public class Principal {
         seuCarro.fabricante = "Toyota";
         seuCarro.modelo = "X5";
         seuCarro.cor = "Vermelho";
-        seuCarro.anoFabricacao = 2023;
+        seuCarro.anoFabricacao = 2021;
+        seuCarro.precoCompra = 980000;
         seuCarro.propietario = propietario2;
-        System.out.printf("Fabricante: %s%n", seuCarro.fabricante);
+        seuCarro.calcularValorRevenda();
+
+
+
+       /* System.out.printf("Fabricante: %s%n", seuCarro.fabricante);
         System.out.printf("Modelo: %s%n", seuCarro.modelo);
         System.out.printf("Cor: %s%n", seuCarro.cor);
         System.out.printf("Ano: %d%n", seuCarro.anoFabricacao);
-        System.out.printf("Propietário: %s%n", seuCarro.propietario.nome);
+        System.out.printf("Propietário: %s%n", seuCarro.propietario.nome);*/
 
     }
 }
