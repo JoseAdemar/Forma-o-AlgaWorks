@@ -22,7 +22,11 @@ public class Principal {
         meuCarro.anoFabricacao = 2015;
         meuCarro.precoCompra = 120000;
         meuCarro.propietario = propietario1;
-        meuCarro.calcularValorRevenda();
+        double meuCarroValorRevenda = meuCarro.calcularValorRevenda();
+        int tempoDeUsoMeuCarro = meuCarro.calcularTempoDeUsoEmAnos();
+        meuCarro.imprimirResumoDepreciacao();
+        /*System.out.printf("Tempo de uso (anos): %d%n", tempoDeUsoMeuCarro);
+        System.out.printf("Valor de revenda: %6.2f%n", meuCarroValorRevenda);*/
         /*System.out.printf("Fabricante: %s%n", meuCarro.fabricante);
         System.out.printf("Modelo: %s%n", meuCarro.modelo);
         System.out.printf("Cor: %s%n", meuCarro.cor);
@@ -38,7 +42,11 @@ public class Principal {
         seuCarro.anoFabricacao = 2021;
         seuCarro.precoCompra = 980000;
         seuCarro.propietario = propietario2;
-        seuCarro.calcularValorRevenda();
+        double seuCarroValorRevenda = seuCarro.calcularValorRevenda();
+        int tempoDeUsoSeuCarro = meuCarro.calcularTempoDeUsoEmAnos();
+        seuCarro.imprimirResumoDepreciacao();
+        /*System.out.printf("Tempo de uso (anos): %d%n", tempoDeUsoSeuCarro);
+        System.out.printf("Valor de revenda: %6.2f%n", seuCarroValorRevenda);*/
 
 
 
