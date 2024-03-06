@@ -19,12 +19,13 @@ public class Principal {
         meuCarro.fabricante = "BMW";
         meuCarro.modelo = "X1";
         meuCarro.cor = "Cinza";
-        meuCarro.anoFabricacao = 2015;
-        meuCarro.precoCompra = 120000;
+        meuCarro.anoFabricacao = 2021;
+        meuCarro.precoCompra = 80000;
         meuCarro.propietario = propietario1;
         double meuCarroValorRevenda = meuCarro.calcularValorRevenda();
         int tempoDeUsoMeuCarro = meuCarro.calcularTempoDeUsoEmAnos();
         meuCarro.imprimirResumoDepreciacao();
+        System.out.println("Valor a pagar do IPVA = " +  meuCarro.calcularIpva());
         /*System.out.printf("Tempo de uso (anos): %d%n", tempoDeUsoMeuCarro);
         System.out.printf("Valor de revenda: %6.2f%n", meuCarroValorRevenda);*/
         /*System.out.printf("Fabricante: %s%n", meuCarro.fabricante);

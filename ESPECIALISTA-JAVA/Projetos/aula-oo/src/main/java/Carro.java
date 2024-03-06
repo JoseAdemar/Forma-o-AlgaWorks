@@ -12,11 +12,21 @@ public class Carro {
     void imprimirResumoDepreciacao(){
         double valorRevendaMeuCarro = calcularValorRevenda();
         int tempoDeUsoMeuCarro = calcularTempoDeUsoEmAnos();
+
+        if (precoCompra <= 0){
+            System.out.println("Carro com preço de compra zerado." +
+                    "Não foi possível imprimir resumo de depreciação.");
+            return;
+        }
         System.out.printf("Tempo de uso (anos): %d%n", tempoDeUsoMeuCarro);
         System.out.printf("Valor de revenda: %6.2f%n", valorRevendaMeuCarro);
     }
 
     double calcularIpva(){
+        int tempoDeUsoEmAnos = calcularTempoDeUsoEmAnos();
+        if (tempoDeUsoEmAnos >= 10){
+            return 0;
+        }
         return calcularValorRevenda() * 0.04;
     }
 
