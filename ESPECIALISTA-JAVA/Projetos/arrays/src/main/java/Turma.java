@@ -1,17 +1,22 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class Turma {
     String identificacao;
     String professora;
-    Aluno[] alunos = new Aluno[0];
+    ArrayList<Aluno> alunos = new ArrayList<>();
 
 
 
 
 
     void adicionarAlunoAoArray(Aluno aluno){
-        this.alunos = Arrays.copyOf(this.alunos, this.alunos.length + 1);
-        alunos[alunos.length - 1] = aluno;
+        ArrayList<Aluno> alunos = new ArrayList<>();
+        alunos.add(aluno);
+        /*this.alunos = Arrays.copyOf(this.alunos, this.alunos.length + 1);
+        alunos[alunos.length - 1] = aluno;*/
     }
 
     public void imprimirAluno() {
@@ -30,7 +35,7 @@ public class Turma {
         return "Turma{" +
                 "identificacao='" + identificacao + '\'' +
                 ", professora='" + professora + '\'' +
-                ", alunos=" + Arrays.toString(alunos) +
+                ", alunos=" + Arrays.toString(alunos.toArray()) +
                 '}';
     }
 }

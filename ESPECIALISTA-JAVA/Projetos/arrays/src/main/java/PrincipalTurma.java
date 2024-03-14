@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PrincipalTurma {
@@ -17,15 +18,8 @@ public class PrincipalTurma {
         turmaB.identificacao = "Maternal-B";
         turmaB.professora = "Tia Maria";
 
-        turmaB.alunos = new Aluno[2];
-
-        turmaB.alunos[0] = new Aluno();
-        turmaB.alunos[0].nome = "João";
-        turmaB.alunos[0].idade = 6;
-
-        turmaB.alunos[1] = new Aluno();
-        turmaB.alunos[1].nome = "Luisa";
-        turmaB.alunos[1].idade = 7;
+        turmaB.alunos.add(aluno1);
+        turmaB.alunos.add(aluno2);
 
         turmaB.adicionarAlunoAoArray(aluno1);
         turmaB.adicionarAlunoAoArray(aluno2);
