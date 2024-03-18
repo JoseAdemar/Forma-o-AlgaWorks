@@ -2,11 +2,14 @@ import java.util.Objects;
 
 public class Produto {
     final static int QUANTIDADE_PRODUTO_EM_ESTOQUE = 100;
+
+    String codigo;
     String nome;
     int quantidadeEstoque;
 
     public Produto(){
         this("nome");
+        final String codigo = this.codigo;
     }
     public Produto(String nome){
         this(nome, QUANTIDADE_PRODUTO_EM_ESTOQUE);
