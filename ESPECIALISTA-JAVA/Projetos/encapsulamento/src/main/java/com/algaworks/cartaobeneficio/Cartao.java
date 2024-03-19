@@ -7,16 +7,30 @@ public class Cartao {
     private String titular;
     private double saldo;
 
+    private boolean isAtivo;
+
+    public Cartao(){
+
+    }
+
     public Cartao(String titular){
         this.titular = titular;
     }
 
-    public String obterTitular(){
-        return  this.titular;
+    public String getTitular() {
+        return titular;
     }
 
-    public double obterSaldo(){
-        return this.saldo;
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public boolean isAtivo() {
+        return isAtivo;
     }
 
     public void depositar(double valorDeposito){
@@ -29,7 +43,7 @@ public class Cartao {
     }
 
     public void debitar(double valor){
-        if (obterSaldo() < valor){
+        if (getSaldo() < valor){
             throw new RuntimeException("Saldo insuficiente para pagamento");
         }
 
