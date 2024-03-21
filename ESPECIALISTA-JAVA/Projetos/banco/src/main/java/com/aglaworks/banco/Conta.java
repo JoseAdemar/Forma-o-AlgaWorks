@@ -48,7 +48,7 @@ public class Conta {
         saldo -= valorSaque;
     }
 
-    public void depositar(double valorDeposito) {
+    public final void depositar(double valorDeposito) {
         if (valorDeposito <= 0) {
             throw new IllegalArgumentException("Valor do depósito deve ser maior que 0");
         }
@@ -71,5 +71,23 @@ public class Conta {
                 ", agencia=" + agencia +
                 ", numero=" + numero +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Conta conta = (Conta) o;
+
+        if (agencia != conta.agencia) return false;
+        return numero == conta.numero;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = agencia;
+        result = 31 * result + numero;
+        return result;
     }
 }
