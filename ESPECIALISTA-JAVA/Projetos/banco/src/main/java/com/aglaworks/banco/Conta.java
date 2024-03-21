@@ -8,28 +8,22 @@ public class Conta {
     private int numero;
     private double saldo;
 
-    public Titular getTitular() {
-        return titular;
+    public Conta(Titular titular, int agencia, int numero) {
+        this.titular = titular;
+        this.agencia = agencia;
+        this.numero = numero;
     }
 
-    public void setTitular(Titular titular) {
-        this.titular = titular;
+    public Titular getTitular() {
+        return titular;
     }
 
     public int getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
-    }
-
     public int getNumero() {
         return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
     }
 
     public double getSaldo() {
@@ -70,4 +64,12 @@ public class Conta {
         System.out.printf("Saldo: %.2f%n", getSaldo());
     }
 
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "titular=" + (titular != null ? titular.getNome() : null) +
+                ", agencia=" + agencia +
+                ", numero=" + numero +
+                '}';
+    }
 }
