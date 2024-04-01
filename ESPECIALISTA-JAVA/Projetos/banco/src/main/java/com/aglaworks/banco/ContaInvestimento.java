@@ -18,4 +18,8 @@ public class ContaInvestimento extends Conta {
         depositar(valorRendimentos);
     }
 
+    @Override
+    public boolean possuiGratuidadeImpressao() {
+        return getValorTotalRendimentos() > 0;
+    }
 }

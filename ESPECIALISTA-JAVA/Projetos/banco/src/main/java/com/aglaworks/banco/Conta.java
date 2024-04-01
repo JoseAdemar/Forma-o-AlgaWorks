@@ -2,7 +2,6 @@ package com.aglaworks.banco;
 
 public class Conta {
 
-
     private Titular titular;
     private int agencia;
     private int numero;
@@ -12,6 +11,10 @@ public class Conta {
         this.titular = titular;
         this.agencia = agencia;
         this.numero = numero;
+    }
+
+    public boolean possuiGratuidadeImpressao(){
+        return false;
     }
 
     public Titular getTitular() {
@@ -26,25 +29,23 @@ public class Conta {
         return numero;
     }
 
-    public double getSaldo() {
+    public final double getSaldo() {
         return saldo;
     }
 
-    protected void setSaldo(double saldo){
-        this.saldo = saldo;
-    }
-
-    protected void validarSaldoParaSaque(double valorSaque){
+    protected void validarSaldoParaSaque(double valorSaque) {
         if (getSaldo() < valorSaque) {
             throw new RuntimeException("Saldo insuficiente para saque");
         }
     }
+
     public void sacar(double valorSaque) {
         if (valorSaque <= 0) {
             throw new IllegalArgumentException("Valor do saque deve ser maior que 0");
         }
 
         validarSaldoParaSaque(valorSaque);
+
         saldo -= valorSaque;
     }
 
@@ -67,27 +68,10 @@ public class Conta {
     @Override
     public String toString() {
         return "Conta{" +
-                "titular=" + (titular != null ? titular.getNome() : null) +
+                "titular=" + titular +
                 ", agencia=" + agencia +
                 ", numero=" + numero +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Conta conta = (Conta) o;
-
-        if (agencia != conta.agencia) return false;
-        return numero == conta.numero;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = agencia;
-        result = 31 * result + numero;
-        return result;
-    }
 }

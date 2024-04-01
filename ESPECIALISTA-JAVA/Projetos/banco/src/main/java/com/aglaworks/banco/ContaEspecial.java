@@ -30,6 +30,10 @@ public class ContaEspecial extends ContaInvestimento{
         return getSaldo() + getLimiteChequeEspecial();
     }
 
+    public double setSaldo(double valor){
+        return valor;
+    }
+
     @Override
     public void imprimirDemonstrativo() {
         super.imprimirDemonstrativo();
