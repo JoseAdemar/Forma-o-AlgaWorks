@@ -4,7 +4,7 @@ import com.algaworks.financeira.modelo.Industria;
 import com.algaworks.financeira.modelo.ParceiroFinanceiro;
 import com.algaworks.financeira.servico.ServicoFinanciamento;
 
-public class Principal {
+public class Principal1 {
     public static void main(String[] args) {
         var servicoFinanciamento = new ServicoFinanciamento();
         var fazenda = new Fazenda("Fazenda Dona Benedita", 5_000_000, 5);
