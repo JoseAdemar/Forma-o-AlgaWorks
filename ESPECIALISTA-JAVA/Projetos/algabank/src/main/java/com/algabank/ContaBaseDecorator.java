@@ -2,16 +2,15 @@ package com.algabank;
 
 import com.javabank.Conta;
 
-import java.util.Objects;
-
-public class ContaComTributacao implements Conta {
-    public static final double TAXA_IMPOSTO_MOVIMENTACAO = 0.1;
-
+public abstract class ContaBaseDecorator implements Conta{
     private Conta contaOriginal;
 
-    public ContaComTributacao(Conta contaOriginal) {
-        Objects.requireNonNull(contaOriginal);
+    public ContaBaseDecorator(Conta contaOriginal) {
         this.contaOriginal = contaOriginal;
+    }
+
+    public Conta getContaOriginal(){
+        return contaOriginal;
     }
 
     @Override
@@ -22,7 +21,6 @@ public class ContaComTributacao implements Conta {
     @Override
     public void sacar(double valor) {
         contaOriginal.sacar(valor);
-        debitarImpostoMovimentacao(valor);
     }
 
     @Override
@@ -33,16 +31,10 @@ public class ContaComTributacao implements Conta {
     @Override
     public void transferir(Conta conta, double valor) {
         contaOriginal.transferir(conta, valor);
-        debitarImpostoMovimentacao(valor);
     }
 
     @Override
     public void aplicarEmInvestimento(double valor) {
         contaOriginal.aplicarEmInvestimento(valor);
-        debitarImpostoMovimentacao(valor);
-    }
-
-    private void debitarImpostoMovimentacao(double valorMovimentacao) {
-        contaOriginal.sacar(valorMovimentacao * TAXA_IMPOSTO_MOVIMENTACAO);
     }
 }
