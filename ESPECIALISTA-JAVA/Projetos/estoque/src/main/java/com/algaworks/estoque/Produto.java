@@ -1,35 +1,14 @@
 package com.algaworks.estoque;
 
+import java.util.Objects;
+
 public class Produto {
     private String nome;
     private int quantidadeEstoque;
     private boolean ativo;
 
-
     public Produto(String nome) {
-        this.nome = nome;
-        this.setNome(nome);
-    }
-
-    public void retirarEstoque(int quantidade) {
-        if (quantidade < 0) {
-            throw new IllegalArgumentException(
-                    "Quantidade não pode ser negativa para retirada no estoque");
-        }
-
-        if (isInativo()) {
-            throw new IllegalStateException("Retirada no estoque não pode ser realizada em produto inativo");
-        }
-
-        if (this.quantidadeEstoque - quantidade < 0) {
-            throw new IllegalArgumentException("Quantidade inválida porque estoque ficaria negativo");
-        }
-
-        this.quantidadeEstoque -= quantidade;
-    }
-
-    public void adicionarEstoque(int quantidade) {
-        this.quantidadeEstoque += quantidade;
+        setNome(nome);
     }
 
     public String getNome() {
@@ -37,9 +16,7 @@ public class Produto {
     }
 
     public void setNome(String nome) {
-        if (nome == null || nome.isEmpty()) {
-            throw new NullPointerException("campo nome não pode ser nulo ou vázio");
-        }
+        Objects.requireNonNull(nome, "Nome deve ser informado");
         this.nome = nome;
     }
 
@@ -47,16 +24,8 @@ public class Produto {
         return quantidadeEstoque;
     }
 
-    public void setQuantidadeEstoque(int quantidadeEstoque) {
-        this.quantidadeEstoque = quantidadeEstoque;
-    }
-
     public boolean isAtivo() {
         return ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
     }
 
     public boolean isInativo() {
@@ -66,4 +35,30 @@ public class Produto {
     public void ativar() {
         this.ativo = true;
     }
+
+    public void desativar() {
+        this.ativo = false;
+    }
+
+    public void retirarEstoque(int quantidade) {
+        if (quantidade < 0) {
+            throw new IllegalArgumentException(
+                    "Quantidade não pode ser negativa para retirada no estoque");
+        }
+
+        if (isInativo()) {
+            throw new ProdutoInativoException("Retirada no estoque não pode ser realizada em produto inativo");
+        }
+
+        if (this.quantidadeEstoque - quantidade < 0) {
+            throw new ProdutoSemEstoqueException("Estoque insuficiente", this.quantidadeEstoque, quantidade);
+        }
+
+        this.quantidadeEstoque -= quantidade;
+    }
+
+    public void adicionarEstoque(int quantidade) {
+        this.quantidadeEstoque += quantidade;
+    }
+
 }
