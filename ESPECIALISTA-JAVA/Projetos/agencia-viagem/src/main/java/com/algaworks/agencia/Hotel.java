@@ -1,4 +1,4 @@
-package com.aglaworks.agencia;
+package com.algaworks.agencia;
 
 import java.util.Objects;
 

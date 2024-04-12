@@ -1,9 +1,10 @@
-import com.aglaworks.agencia.CadastroHotel;
-import com.aglaworks.agencia.Hotel;
+import com.algaworks.agencia.CadastroHotel;
+import com.algaworks.agencia.Hotel;
 
 import java.util.ArrayList;
 
 public class Principal {
+
     public static void main(String[] args) {
         CadastroHotel cadastro = new CadastroHotel();
         cadastro.adicionar("Jaguaribe Lodge", "Fortim/CE", 1300);
@@ -12,16 +13,14 @@ public class Principal {
         cadastro.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 2000);
         cadastro.adicionar("Mercure", "Uberlândia/MG", 400);
 
-        //cadastro.adicionar("Vila Selvagem", "Fortim/CE", 1400);
+//        cadastro.remover(new Hotel("Vila Selvagem", "Fortim/CE", 0));
+//        cadastro.removerPorCidade("Fortim/CE");
+       // cadastro.removerTodos();
 
         ArrayList<Hotel> hoteis = cadastro.obterTodos();
-//        int indice = hoteis.indexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0));
-        int indice = hoteis.lastIndexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0));
-        System.out.println(indice);
-
-//        System.out.println(hoteis.get(indice));
-
-//        imprimirHoteis(hoteis);
+//        hoteis.set(3, new Hotel("Teste", "Teste", 0));
+//        hoteis.add(3, new Hotel("Teste", "Teste", 0));
+        imprimirHoteis(hoteis);
     }
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
