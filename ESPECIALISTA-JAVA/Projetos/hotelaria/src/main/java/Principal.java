@@ -2,6 +2,8 @@ import com.aglaworks.agencia.CadastroHotel;
 import com.aglaworks.agencia.Hotel;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
 
 public class Principal {
     public static void main(String[] args) {
@@ -14,22 +16,38 @@ public class Principal {
 
         //cadastro.adicionar("Vila Selvagem", "Fortim/CE", 1400);
 
-        ArrayList<Hotel> hoteis = cadastro.obterTodos();
+       // ArrayList<Hotel> hoteis = cadastro.obterTodos();
 //        int indice = hoteis.indexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0));
-        int indice = hoteis.lastIndexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0));
-        System.out.println(indice);
+       // int indice = hoteis.lastIndexOf(new Hotel("Vila Selvagem", "Fortim/CE", 0));
+       // System.out.println(indice);
 
 //        System.out.println(hoteis.get(indice));
 
-//        imprimirHoteis(hoteis);
+       imprimirHoteis(cadastro.obterTodos());
     }
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
-        for (int i = 0; i < hoteis.size(); i++) {
+
+        for(Hotel hotel : hoteis){
+            System.out.println(hotel);
+        }
+
+        /*ListIterator<Hotel> hotelIterator = hoteis.listIterator(hoteis.size());
+
+        while (hotelIterator.hasPrevious()) {
+            System.out.println(hotelIterator.previous());
+        }*/
+
+       /* Iterator<Hotel> hotelIterator = hoteis.iterator();
+
+        while (hotelIterator.hasNext()) {
+            System.out.println(hotelIterator.next());
+        }*/
+        /*for (int i = 0; i < hoteis.size(); i++) {
             Hotel hotel = hoteis.get(i);
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(),
                     hotel.getCidade(), hotel.getPrecoDiaria());
-        }
+        }*/
     }
 
 }
