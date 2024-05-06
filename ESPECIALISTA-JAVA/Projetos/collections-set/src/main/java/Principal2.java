@@ -1,34 +1,30 @@
+import com.algaworks.crm.Contato;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
+import java.util.HashSet;
+import java.util.Set;
 
+public class Principal2 {
+    public static void main(String[] args) {
+        Set<Contato> contatos = new HashSet<>();
 
+        System.out.println("---");
+        contatos.add(new Contato("Maria", "maria@algaworks.com", 40));
+        contatos.add(new Contato("Ana", "ana@algaworks.com", 30));
+        contatos.add(new Contato("José", "jose@algaworks.com", 25));
+        contatos.add(new Contato("Rosa", "rosa@algaworks.com", 50));
+        contatos.add(new Contato("João", "joao@algaworks.com", 70));
+        System.out.println("--");
+        contatos.add(new Contato("Josefina", "josefina@algaworks.com", 70));
+        System.out.println("--");
+        contatos.add(new Contato("Josefina", "josefina@algaworks.com", 70));
+        contatos.add(null);
+        System.out.println("--");
 
-    public class Principal2 {
-        public static void main(String[] args) throws IOException {
+//        System.out.println(contatos);
 
-            Scanner sc = new Scanner(System.in);
-
-            int inputNumber = sc.nextInt();
-            double inputDouble = sc.nextDouble();
-            sc.nextLine();
-            String inputString = sc.nextLine();
-
-            System.out.println(inputString);
-            System.out.println(inputDouble);
-            System.out.println(inputNumber);
-
-            sc.close();
-        }
+        boolean resultado = contatos.contains(
+                new Contato("Alaor", "alaor@algaworks.com", 30));
+        System.out.println(resultado);
     }
+
+}
