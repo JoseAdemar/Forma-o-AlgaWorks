@@ -1,39 +1,43 @@
 package com.algaworks.junit.utilidade;
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SaudacaoUtilTest {
 
     @Test
-    public void saudar() {
-        String saudacao = SaudacaoUtil.saudar(9);
-        System.out.println(saudacao);
-        assertEquals("Bom dia", saudacao, "Saudação incorreta!");
+    public void saudarDeveRetornarAmensagemBomDia(){
+        int bomDia = 9;
+        String saudacao = SaudacaoUtil.saudar(bomDia);
+        assertEquals("Bom dia", saudacao);
     }
 
     @Test
-    public void deveLancarException() {
-        // Forma de fazer sem utilizar lambda
-       /* assertThrows(IllegalArgumentException.class, new Executable() {
-            @Override
-            public void execute() throws Throwable {
-                SaudacaoUtil.saudar(-10);
-            }
-        });*/
+    void saudarDeveRetornarAmensagemBoaTarde() {
+        int boaTarde = 14;
+        String saudar = SaudacaoUtil.saudar(boaTarde);
+        assertEquals("Boa tarde", saudar);
+    }
 
-        // Com lambda
-        IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> SaudacaoUtil.saudar(-10));
-        assertEquals("Hora inválida", illegalArgumentException.getMessage());
+
+    @Test
+    void saudarDeveRetornarAmensagemBoaNoite() {
+        int boaNoite = 18;
+        String saudar = SaudacaoUtil.saudar(boaNoite);
+        assertEquals("Boa noite", saudar);
     }
 
     @Test
-    public void naoDeveLancarExcecao(){
-        assertDoesNotThrow(() -> SaudacaoUtil.saudar(0));
+    public void deveLancarException(){
+        int hora = -10;
+        IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class,
+                () -> SaudacaoUtil.saudar(hora));
+        assertEquals("Hora invalida", illegalArgumentException.getMessage());
     }
 
-
+    @Test
+    public void naoDeveLancarException(){
+        int hora = 0;
+        assertDoesNotThrow(() -> SaudacaoUtil.saudar(hora));
+    }
 }
