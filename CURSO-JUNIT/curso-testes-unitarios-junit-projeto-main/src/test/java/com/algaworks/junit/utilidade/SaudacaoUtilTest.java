@@ -1,10 +1,13 @@
 package com.algaworks.junit.utilidade;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,6 +22,9 @@ class SaudacaoUtilTest {
         String saudacao = SaudacaoUtil.saudar(bomDia);
         //Assert
         assertEquals("Bom dia", saudacao);
+
+        //Utilizando o assertJ ao invés do assert do junit
+        Assertions.assertThat(saudacao).isEqualTo("Bom dia");
     }
 
     @Test
@@ -51,5 +57,12 @@ class SaudacaoUtilTest {
         int horaValida = 0;
         Executable validarChamadaDometodoSaudar = () -> SaudacaoUtil.saudar(horaValida);
         assertDoesNotThrow(validarChamadaDometodoSaudar);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {5,6,7,8,9,10,11})
+    public void Dado_horario_matinal_Entao_deve_retornar_bom_dia(int hora) {
+        String saudacao = SaudacaoUtil.saudar(hora);
+        assertEquals("Bom dia", saudacao);
     }
 }
