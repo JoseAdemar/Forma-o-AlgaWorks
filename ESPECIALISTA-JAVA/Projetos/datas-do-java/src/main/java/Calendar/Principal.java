@@ -1,3 +1,5 @@
+package Calendar;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -5,7 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Principal5 {
+public class Principal {
 
     public static void main(String[] args) throws ParseException {
         DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
