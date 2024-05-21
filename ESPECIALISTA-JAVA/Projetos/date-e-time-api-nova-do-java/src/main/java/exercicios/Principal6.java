@@ -1,3 +1,5 @@
+package exercicios;
+
 import java.time.LocalTime;
 
 public class Principal6 {
