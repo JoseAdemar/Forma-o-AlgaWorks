@@ -12,7 +12,7 @@ public class Principal {
     public static void main(String[] args) throws IOException {
         Path pastaFornecedores = Path.of("src/main/java/exercicio5/docs/contratos/fornecedores");
         Path pastaClientes = Path.of("src/main/java/exercicio5/docs/contratos/clientes");
-        Path arquivoContrato = Path.of("contrato-venda.txt");
+        Path arquivoContrato = Path.of("poema.txt");
 
         Path arquivoContratoOrigem = pastaFornecedores.resolve(arquivoContrato);
         Path arquivoContratoDestino = pastaClientes.resolve(arquivoContrato);

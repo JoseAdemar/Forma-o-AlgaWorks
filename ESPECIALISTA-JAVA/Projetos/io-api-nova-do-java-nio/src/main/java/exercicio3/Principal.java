@@ -14,7 +14,7 @@ public class Principal {
         Path pastaFornecedores = Path.of("src/main/java/exercicio3/docs/contratos/fornecedores");
         Files.createDirectories(pastaFornecedores);
 
-        Path arquivoContrato = pastaFornecedores.resolve(Path.of("contrato-venda.txt"));
+        Path arquivoContrato = pastaFornecedores.resolve(Path.of("poema.txt"));
         Files.createFile(arquivoContrato);
         System.out.println(Files.exists(arquivoContrato));
     }
