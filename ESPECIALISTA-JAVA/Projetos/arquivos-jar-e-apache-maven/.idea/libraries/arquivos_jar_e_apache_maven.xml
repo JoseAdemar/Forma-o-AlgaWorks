@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="arquivos-jar-e-apache-maven">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/main/java/exercicio2/lib/arquivos-jar-e-apache-maven.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/arquivos_jar_e_apache_maven_jar/arquivos-jar-e-apache-maven.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
