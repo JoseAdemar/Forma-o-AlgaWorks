@@ -1,7 +1,8 @@
-package projeto02_api_nativa_do_java_de_log_jul;
+package projeto02_api_nativa_do_java_de_log_jul.negocio;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import projeto02_api_nativa_do_java_de_log_jul.SaldoInsuficienteException;
 
 import java.math.BigDecimal;
 import java.util.Objects;

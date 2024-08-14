@@ -2,9 +2,10 @@ package projeto02_api_nativa_do_java_de_log_jul;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import projeto02_api_nativa_do_java_de_log_jul.negocio.ContaCorrente;
+import projeto02_api_nativa_do_java_de_log_jul.negocio.Titular;
 
 import java.math.BigDecimal;
-import java.util.logging.Level;
 public class Principal {
 
     private static final Logger logger = LoggerFactory.getLogger(Principal.class.getName());

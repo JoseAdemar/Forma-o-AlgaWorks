@@ -1,0 +1,10 @@
+2024-08-13 16:29:17.809 WARN  p.n.Titular - Nome do titular 'João' muito curto
+2024-08-13 16:29:17.818 DEBUG p.n.ContaCorrente - Realizando depósito...
+2024-08-13 16:29:17.823 INFO  p.n.ContaCorrente - Depósito de R$200 realizado na conta 100/9999
+2024-08-13 16:29:17.824 DEBUG p.n.ContaCorrente - Realizando saque...
+2024-08-13 16:29:17.825 INFO  p.n.ContaCorrente - Saque de R$50.5 realizado na conta 100/9999
+2024-08-13 16:29:17.826 DEBUG p.n.ContaCorrente - Realizando saque...
+2024-08-13 16:29:17.827 ERROR p.Principal - Erro administrando conta corrente 100/9999
+java.lang.IllegalArgumentException: Valor do saque deve ser maior que 0
+	at projeto02_api_nativa_do_java_de_log_jul.negocio.ContaCorrente.sacar(ContaCorrente.java:53)
+	at projeto02_api_nativa_do_java_de_log_jul.Principal.main(Principal.java:22)
